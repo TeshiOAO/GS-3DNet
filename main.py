@@ -24,7 +24,7 @@ def train(cfg):
     ### plot
     loss_plt = []
 
-    train_loader = my_data_load('./GMMDATA/testdataset/train', cfg.batch_size, cfg.num_workers)
+    train_loader = my_data_load('./data/testdataset/train', cfg.batch_size, cfg.num_workers)
 
     for epoch in range(cfg.epochs):
         # training do not need gmm information
@@ -104,7 +104,6 @@ if __name__ == "__main__":
     # misc
     parser.add_argument("--hid_c", default=768, type=int, help="number of hidden channels")
     parser.add_argument("--out_dir", default="log", type=str, help="/path/to/output directory")
-    parser.add_argument("--data", default="GMM8", type=str, help="select the data for training")
 
     cfg = parser.parse_args()
 

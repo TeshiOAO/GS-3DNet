@@ -11,13 +11,18 @@ During the training phase, the raw data is used to train the latent representati
 ![model](./docs/img/compare.png)
 
 ## Layout
-- `GMMDATA` contains the dataset of model, which seperated as train and test sets. Each of them are named with simulation configurations. The file start with `x` is the raw data, `y` is the processed distribution representations consist of block position, parameter, and GMMs.
+- `data` contains the dataset of model, which seperated as train and test sets. Each of them are named with simulation configurations. The file start with `x` is the raw data, `y` is the processed distribution representations consist of block position, parameter, and GMMs.
 
 - `log` stores the training information such as the line chart of training loss, checkpoints, and histogram.
 
 - `result` is the directory storing output reconstructions and ground truth data. The reconstruction of naive BD are made for comparing as well.
 
 - `utils` contains the utils function of model.
+
+- `preprocess` is the tool I use to convert scientific data in `.bin` format into distribution representations. The results are stored in two `.npy` files. Files starting with `x` are the raw data split into small blocks, used for training validation. Files starting with `y` are the distribution representations of the small blocks, which include the following parameters:
+  - `xyz` is the block positions inside the data.
+  - `p` is the parameter for ensemble data simulation.
+  - `means`,`cov`,`weight` are the configuration to compose the GMM.
 
 ## Usage
 Training the model

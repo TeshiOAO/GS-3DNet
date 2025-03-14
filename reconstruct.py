@@ -11,7 +11,7 @@ sys.path.append(os.pardir)
 block_size = 8
 loaded_model = './docs/Nyx_8.pth'
 # loaded_model = './log/Nyx_8.pth'
-testdir = f'./GMMDATA/testdataset/test'
+testdir = f'./data/testdataset/test'
 Datasize = (np.array([64, 64, 64])//block_size)*block_size
 
 if torch.cuda.is_available():
