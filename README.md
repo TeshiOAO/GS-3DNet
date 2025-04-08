@@ -40,6 +40,7 @@ Evaluating the reconstruction (excluding EMD)
 python3 evaluating.py
 ```
 
+For VIDA user, the original Nyx data are uploaded to the NAS. The redsea are public released from here(https://kaust-vislab.github.io/SciVis2020/data.html). Each of the Nyx data is consisted of 9 variables and timestep. GS-3DNet are trained with `density` variable and 200 timestep. As for the redsea dataset, each data are used with 30 timestep. This repository only contains with Nyx version, using with redsea should be adjusted. The training/testing scientific data have to be preprocessed to transform into distribution-based representations, which can be produced by running `preprocess/makeGMM.py`.
 
 ## LICENSE
 (c) 2025 Han Huang. MIT License
